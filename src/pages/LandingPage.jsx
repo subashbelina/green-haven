@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/LandingPage.css';
 
-function LandingPage() {
+const LandingPage = () => {
   return (
     <div className="landing-page">
       {/* Background Image */}
@@ -13,22 +15,17 @@ function LandingPage() {
       
       {/* Content */}
       <div className="landing-content">
-        <h1>GreenScape Plants</h1>
-        
-        <p>
+        <h1 className="company-name">GreenScape Plants</h1>
+        <p className="company-description">
           We bring nature indoors with a curated selection of vibrant, 
           easy-care houseplants delivered straight to your door.
         </p>
-        
-        <Link 
-          to="/products"
-          className="btn btn-primary"
-        >
+        <Link to="/products" className="get-started-btn">
           Get Started
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LandingPage 
+export default LandingPage; 
