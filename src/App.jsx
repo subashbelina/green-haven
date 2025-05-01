@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
 import Header from './components/Header'
@@ -19,6 +20,9 @@ function App() {
               <Route path="/cart" element={<ShoppingCart />} />
             </Routes>
           </main>
+          <footer className="footer">
+            <p>Green Haven - Version 1.0.0</p>
+          </footer>
         </div>
       </Router>
     </CartProvider>
