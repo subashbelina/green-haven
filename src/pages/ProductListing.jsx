@@ -2,12 +2,20 @@ import React, { useState } from 'react'
 import { useCart } from '../context/CartContext'
 import '../styles/ProductListing.css'
 
+// Import product images
+import monsteraImg from '../assets/images/monstera.jpg'
+import snakePlantImg from '../assets/images/snake-plant.jpg'
+import pothosImg from '../assets/images/pothos.jpg'
+import fiddleLeafImg from '../assets/images/fiddle-leaf.jpg'
+import succulentImg from '../assets/images/succulent.jpg'
+import calatheaImg from '../assets/images/calathea.jpg'
+
 const products = [
   {
     id: 1,
     name: 'Monstera Deliciosa',
     price: 49.99,
-    image: '/assets/images/monstera.jpg',
+    image: monsteraImg,
     category: 'Indoor Plants',
     description: 'A popular tropical plant known for its distinctive split leaves.'
   },
@@ -15,7 +23,7 @@ const products = [
     id: 2,
     name: 'Snake Plant',
     price: 39.99,
-    image: '/assets/images/snake-plant.jpg',
+    image: snakePlantImg,
     category: 'Indoor Plants',
     description: 'A hardy plant that can survive in low light conditions.'
   },
@@ -23,7 +31,7 @@ const products = [
     id: 3,
     name: 'Golden Pothos',
     price: 29.99,
-    image: '/assets/images/pothos.jpg',
+    image: pothosImg,
     category: 'Indoor Plants',
     description: 'A trailing plant with heart-shaped leaves.'
   },
@@ -31,7 +39,7 @@ const products = [
     id: 4,
     name: 'Fiddle Leaf Fig',
     price: 79.99,
-    image: '/assets/images/fiddle-leaf.jpg',
+    image: fiddleLeafImg,
     category: 'Indoor Plants',
     description: 'A statement plant with large, glossy leaves.'
   },
@@ -39,7 +47,7 @@ const products = [
     id: 5,
     name: 'Succulent Collection',
     price: 34.99,
-    image: '/assets/images/succulent.jpg',
+    image: succulentImg,
     category: 'Succulents',
     description: 'A set of 3 different drought-resistant succulents.'
   },
@@ -47,7 +55,7 @@ const products = [
     id: 6,
     name: 'Calathea',
     price: 44.99,
-    image: '/assets/images/calathea.jpg',
+    image: calatheaImg,
     category: 'Indoor Plants',
     description: 'Known for its beautiful patterned leaves.'
   }

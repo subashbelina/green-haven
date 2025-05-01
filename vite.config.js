@@ -1,13 +1,18 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
-export default defineConfig({
-  base: '/green-haven/', // Base URL for GitHub Pages
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
+  base: mode === 'production' ? '/green-haven/' : '/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true
+  },
   css: {
     modules: {
       localsConvention: 'camelCase'
     }
   }
-})
+}))
