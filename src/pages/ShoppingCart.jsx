@@ -68,6 +68,7 @@ function ShoppingCart() {
               aria-label="Remove item"
             >
               <TrashIcon className="h-6 w-6" />
+              <span className="remove-text">Delete</span>
             </button>
           </div>
         ))}

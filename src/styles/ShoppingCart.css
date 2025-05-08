@@ -89,17 +89,64 @@
 }
 
 .remove-btn {
-  background: none;
-  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  border: 2px solid #e53e3e;
   color: #e53e3e;
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 4px;
-  transition: all 0.2s;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  justify-content: center;
+  width: auto;
+  height: 40px;
+}
+
+.remove-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: inherit;
+  letter-spacing: 0.5px;
 }
 
 .remove-btn:hover {
-  background-color: #fff5f5;
+  background-color: #e53e3e;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(229, 62, 62, 0.2);
+}
+
+.remove-btn:active {
+  transform: scale(0.95);
+}
+
+.remove-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+.remove-btn:hover svg {
+  transform: rotate(8deg);
+}
+
+/* Add responsive styles for the remove button */
+@media (max-width: 768px) {
+  .remove-btn {
+    width: 100%;
+    height: 36px;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .remove-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  .remove-text {
+    font-size: 0.95rem;
+  }
 }
 
 .cart-total {
@@ -152,4 +199,77 @@
 
 .btn-secondary:hover {
   background-color: #f0f7ff;
+}
+
+/* Responsive styles for cart items */
+@media (max-width: 768px) {
+  .cart-item {
+    grid-template-columns: 80px 1fr auto;
+    grid-template-areas:
+      "image info info"
+      "image quantity total"
+      "image delete delete";
+    gap: 1rem;
+  }
+
+  .cart-item-image {
+    grid-area: image;
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-item-info {
+    grid-area: info;
+  }
+
+  .quantity-controls {
+    grid-area: quantity;
+  }
+
+  .item-total {
+    grid-area: total;
+  }
+
+  .remove-btn {
+    grid-area: delete;
+    width: 100%;
+    margin-top: 0.5rem;
+    background-color: #fff5f5;
+  }
+
+  .remove-btn svg {
+    margin-right: 0.5rem;
+  }
+
+  .remove-btn::after {
+    content: 'Remove';
+    font-size: 0.9rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .cart-page {
+    padding: 1rem;
+  }
+
+  .cart-item {
+    padding: 0.75rem;
+  }
+
+  .cart-item-name {
+    font-size: 1rem;
+  }
+
+  .cart-total {
+    padding: 1rem;
+  }
+
+  .cart-actions {
+    flex-direction: column;
+  }
+
+  .cart-actions .btn {
+    width: 100%;
+  }
 } 
