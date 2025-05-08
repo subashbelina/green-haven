@@ -3,7 +3,7 @@ import { useCart } from '../context/CartContext'
 import { TrashIcon } from '@heroicons/react/24/outline'
 
 function ShoppingCart() {
-  const { cart, removeFromCart, updateQuantity, getTotalCost } = useCart()
+  const { cart, removeFromCart, updateQuantity, getTotalCost, getTotalItems } = useCart()
 
   if (cart.length === 0) {
     return (
@@ -24,7 +24,7 @@ function ShoppingCart() {
       <h1>Shopping Cart</h1>
       
       <div className="cart-summary">
-        <p>You have {cart.length} items in your cart</p>
+        <p>You have {getTotalItems()} plants in your cart</p>
       </div>
 
       <div className="cart-items">
@@ -45,6 +45,7 @@ function ShoppingCart() {
               <button
                 onClick={() => updateQuantity(item.id, item.quantity - 1)}
                 className="quantity-btn"
+                disabled={item.quantity <= 1}
               >
                 -
               </button>
@@ -57,9 +58,14 @@ function ShoppingCart() {
               </button>
             </div>
 
+            <div className="item-total">
+              ${(item.price * item.quantity).toFixed(2)}
+            </div>
+
             <button
               onClick={() => removeFromCart(item.id)}
               className="remove-btn"
+              aria-label="Remove item"
             >
               <TrashIcon className="h-6 w-6" />
             </button>
@@ -68,8 +74,9 @@ function ShoppingCart() {
       </div>
 
       <div className="cart-total">
-        <div className="cart-total-amount">
-          Total: ${getTotalCost()}
+        <div className="cart-total-details">
+          <p>Total Plants: {getTotalItems()}</p>
+          <p className="cart-total-amount">Total: ${getTotalCost().toFixed(2)}</p>
         </div>
         
         <div className="cart-actions">

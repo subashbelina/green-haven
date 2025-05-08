@@ -8,9 +8,12 @@ import ShoppingCart from './pages/ShoppingCart'
 import './App.css'
 
 function App() {
+  const isProduction = import.meta.env.PROD;
+  const basename = isProduction ? '/green-haven' : '';
+
   return (
     <CartProvider>
-      <Router>
+      <Router basename={basename}>
         <div className="app">
           <Header />
           <main>

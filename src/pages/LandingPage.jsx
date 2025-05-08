@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/LandingPage.css';
-import landingBg from '../assets/images/landing-bg.jpg';
+import landingBg from '/src/assets/images/landing-bg.jpg';
 
 const LandingPage = () => {
   return (
